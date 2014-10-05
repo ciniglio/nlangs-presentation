@@ -10,7 +10,11 @@
                  [org.postgresql/postgresql "9.3-1102-jdbc41"]
                  [yesql "0.4.0"]
 
-                 [org.clojure/clojurescript "0.0-2356"]]
+                 [org.clojure/clojurescript "0.0-2356"]
+                 [prismatic/dommy "0.1.3"]
+                 [cljs-ajax "0.3.3"]
+
+                 ]
   :plugins [[lein-cljsbuild "1.0.3"]]
   :cljsbuild {
               :builds [{:source-paths ["src-cljs"] ; The path to the top-level ClojureScript source directory:
