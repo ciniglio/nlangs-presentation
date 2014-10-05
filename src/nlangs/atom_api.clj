@@ -1,6 +1,10 @@
 (ns nlangs.atom-api)
 
-(def groceries (atom []))
+(def groceries
+  (atom [{:name "Carrots" :bought false}
+         {:name "Short Ribs" :bought false}
+         {:name "Bread" :bought false}
+         {:name "Cookies" :bought false}]))
 
 (defn grocery-list []
   @groceries)
