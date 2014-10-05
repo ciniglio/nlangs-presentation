@@ -6,4 +6,6 @@
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [ring "1.3.1"]
                  [ring/ring-json "0.3.1"]
-                 [compojure "1.2.0"]])
+                 [compojure "1.2.0"]
+                 [org.postgresql/postgresql "9.3-1102-jdbc41"]
+                 [yesql "0.4.0"]])

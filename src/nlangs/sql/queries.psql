@@ -1,0 +1,9 @@
+-- name: get-grocery-items
+-- Gets all items from grocery table
+SELECT *
+FROM groceries
+
+-- name: add-new-grocery-item<!
+-- Adds new grocery item
+INSERT INTO groceries (name, bought)
+VALUES ( :name, :bought )
