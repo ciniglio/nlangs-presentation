@@ -40979,13 +40979,30 @@ goog.require("dommy.core");
 goog.require("dommy.utils");
 goog.require("dommy.utils");
 cljs.core.enable_console_print_BANG_.call(null);
-cljs.core.print.call(null, "Hello clojurescript!");
+nlangs.core.mark_bought = function mark_bought(item, event) {
+  console.log("You've clicked the: ", event, " on ", item);
+  return ajax.core.PUT.call(null, "/grocery-list", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "params", "params", 710516235), cljs.core.update_in.call(null, item, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, ["bought"], null), cljs.core.not), new cljs.core.Keyword(null, "format", "format", -1306924766), new cljs.core.Keyword(null, "json", "json", 1279968570)], null));
+};
 nlangs.core.add_item_to_list = function add_item_to_list(list, item) {
-  cljs.core.prn.call(null, "Item: ", item);
+  var checkbox = function() {
+    var dom6520 = document.createElementNS("http://www.w3.org/1999/xhtml", "input");
+    dom6520.setAttribute("type", "checkbox");
+    if (cljs.core.truth_(item.call(null, "bought"))) {
+      dom6520.setAttribute("checked", item.call(null, "bought"));
+    } else {
+    }
+    return dom6520;
+  }();
+  var _ = dommy.core.listen_BANG_.call(null, checkbox, new cljs.core.Keyword(null, "click", "click", 1912301393), cljs.core.partial.call(null, nlangs.core.mark_bought, item));
   var n = function() {
-    var dom6762 = document.createElementNS("http://www.w3.org/1999/xhtml", "li");
-    dom6762.appendChild(dommy.template.__GT_node_like.call(null, item.call(null, "name")));
-    return dom6762;
+    var dom6521 = document.createElementNS("http://www.w3.org/1999/xhtml", "li");
+    dom6521.appendChild(function() {
+      var dom6522 = document.createElementNS("http://www.w3.org/1999/xhtml", "span");
+      dom6522.appendChild(dommy.template.__GT_node_like.call(null, checkbox));
+      dom6522.appendChild(dommy.template.__GT_node_like.call(null, item.call(null, "name")));
+      return dom6522;
+    }());
+    return dom6521;
   }();
   return dommy.core.append_BANG_.call(null, list, n);
 };
