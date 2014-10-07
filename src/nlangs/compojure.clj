@@ -5,7 +5,7 @@
             [ring.middleware.json :refer [wrap-json-response
                                           wrap-json-params
                                           wrap-json-body]]
-            [nlangs.atom-api :as api]))
+            [nlangs.sql-api :as api]))
 
 (defroutes app
   (GET "/" [] "<h1>Hello World</h1>")

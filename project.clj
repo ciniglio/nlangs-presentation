@@ -14,7 +14,7 @@
                  [prismatic/dommy "0.1.3"]
                  [cljs-ajax "0.3.3"]
 
-                 ]
+                 [org.clojure/core.async "0.1.346.0-17112a-alpha"]]
   :plugins [[lein-cljsbuild "1.0.3"]]
   :cljsbuild {
               :builds [{:source-paths ["src-cljs"] ; The path to the top-level ClojureScript source directory:

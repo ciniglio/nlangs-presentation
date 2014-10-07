@@ -2,8 +2,15 @@
 -- Gets all items from grocery table
 SELECT *
 FROM groceries
+ORDER BY id DESC
 
 -- name: add-new-grocery-item<!
 -- Adds new grocery item
 INSERT INTO groceries (name, bought)
 VALUES ( :name, :bought )
+
+-- name: update-grocery-item-bought!
+-- Updates whether an item has been bought
+UPDATE groceries
+SET bought = :bought
+WHERE name = :name

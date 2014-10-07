@@ -8,6 +8,15 @@
 
 (defqueries "nlangs/sql/queries.psql")
 
-(get-grocery-items db-spec)
+(defn grocery-list []
+ (get-grocery-items db-spec))
 
-(add-new-grocery-item<! db-spec "Cabbage")
+(defn add-to-grocery-list [name]
+  (add-new-grocery-item<! db-spec name false)
+  (grocery-list))
+
+(defn update-item-bought
+  ([name] (update-item-bought name true))
+  ([name bought]
+     (update-grocery-item-bought! db-spec bought name)
+     (grocery-list)))
