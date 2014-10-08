@@ -193,8 +193,8 @@
 
 (defn request-modifier-m [handler]
   (fn [request]
-    (let [parsed-request (request-sizer request)
-          response (handler parsed-request)]
+    (let [sized-request (request-sizer request)
+          response (handler sized-request)]
       response)))
 
 (defn handler [request]

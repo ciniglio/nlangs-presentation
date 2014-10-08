@@ -9,10 +9,6 @@
 (defn grocery-list []
   @groceries)
 
-(defn add-to-grocery-list [name]
-  (let [new-item {:name name :bought false}]
-    (swap! groceries conj new-item)))
-
 (defn update-item-bought
   ([name] (update-item-bought name true))
   ([name bought]
@@ -22,3 +18,8 @@
                      (if (= name (:name item))
                        (assoc item :bought bought)
                        item)) items)))))
+
+
+;; (defn add-to-grocery-list [name]
+;;   (let [new-item {:name name :bought false}]
+;;     (swap! groceries conj new-item)))
